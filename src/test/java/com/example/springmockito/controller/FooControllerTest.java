@@ -18,6 +18,10 @@ class FooControllerTest {
     private MockMvc mockMvc;
     @Test
     public void foo() throws Exception {
-         mockMvc.perform(MockMvcRequestBuilders.get("/displayallbeans")).andExpect(MockMvcResultMatchers.status().isOk());
+         mockMvc.perform(MockMvcRequestBuilders.get("/displayallbeans")).andExpect(MockMvcResultMatchers.status().isGatewayTimeout());
      }
+    @Test
+    public void foo2() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/displayallbeans")).andExpect(MockMvcResultMatchers.status().isOk());
+    }
 }
